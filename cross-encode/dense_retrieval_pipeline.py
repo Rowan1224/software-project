@@ -187,7 +187,7 @@ if 'show' not in st.session_state:
     st.session_state['show'] = False
 
 if 'results' not in st.session_state:
-    st.session_state['show'] = None
+    st.session_state['results'] = None
 
 # if 'run' not in st.session_state:
 #     st.session_state['run'] = True
