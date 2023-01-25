@@ -7,10 +7,10 @@ The goal of this project is to provide easy access to important legal informatio
 
 ## Repository structure
 
-- "dataset" folder : link to drive containing an archive with all the civile files converted from xml files to story files, using the script "preprocess_original_CASS_xml_files"
+- [dataset/](dataset) : link to drive containing an archive with all the civile files converted from xml files to story files, using the script "preprocess_original_CASS_xml_files"
 
-- "presentations" folder :
+- [presentations/](presentations) :
 
-- "results" folder : 
+- [results/](results) : 
 
-- "scripts" folder: all the scripts for preprocessing, training models and evaluating
+- [scripts/](scripst) : all the scripts for preprocessing, training models and evaluating
