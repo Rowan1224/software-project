@@ -9,7 +9,7 @@ The goal of this project is to provide easy access to important legal informatio
 
 - [dataset/](dataset) : link to drive containing an archive with all the civile files converted from xml files to story files, using the script "preprocess_original_CASS_xml_files"
 
-- [presentations/](presentations) :
+- [presentations/](presentations) : folder containing all the intermediate presentations as PDF. Each file is labled using the template SoftwarePresentation_[month-and-date].pdf
 
 - [results/](results) : 
 
