@@ -7,8 +7,9 @@ In this report, we present and discuss the development of a Civil Law dense info
 Requires the following packages:
 - Python 3.10
 
-The libraries required for the successful execution of this code are mentioned in `requirements.txt`. In order to install all the libraries:
-`pip install -r requirements.txt`.
+Clone this repository: git clone https://github.com/Rowan1697/software-project.git
+
+To download and setup the necessary data and libraries: `./setup.sh`
 
 ### Download Dataset
 By clicking on this [link](https://drive.google.com/drive/folders/1BOxC6u1HAdYBWFeCVpOU7H5yO-O8UKN5?usp=share_link) you will be redirected to a drive where our dataset has been stocked. This data was created by using CASS dataset's Civile files and it represents the summaries made by the lawyers.
