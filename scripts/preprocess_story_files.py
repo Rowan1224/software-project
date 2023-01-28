@@ -1,48 +1,19 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# !python -m nltk.downloader punkt
-
-
-# In[2]:
-
-
-# !git clone https://github.com/patil-suraj/question_generation.git
-
-
-# In[1]:
-
-
 import os
 import pandas as pd
 from os import listdir
 from os.path import isfile, join
 import re
 
-
-# In[2]:
-
-
 print(os.getcwd())
-
-
-# In[3]:
 
 
 os.chdir("../")
 print(os.getcwd())
 
 
-# In[4]:
-
 
 from pipeline_fr import pipeline_fr
 
-
-# In[5]:
 
 
 data_dir = "Datasets/CASS-dataset/Freemium_cass_global_20220417-170000/cass/global/civile"
@@ -54,7 +25,6 @@ data_dir = "Datasets/CASS-dataset/Freemium_cass_global_20220417-170000/cass/glob
 # 
 # Filter and select just the cases after year 2000 
 
-# In[6]:
 
 
 import re
@@ -187,17 +157,12 @@ def delete_special_characters(d):
     return new_d
 
 
-# In[37]:
-
 
 decision = delete_special_characters(decision)
 resume = delete_special_characters(resume)
 print(len(decision), len(resume))
 
 
-# In[38]:
-
 
 df_files = pd.DataFrame(list(zip( list(file_content_assoc.keys()), decision, resume)), columns = ["id_file", "decision", "resume"])
-df_files
-
+df_files.to_csv('civil-data.csv', index=False)
