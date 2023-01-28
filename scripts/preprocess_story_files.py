@@ -16,7 +16,7 @@ from pipeline_fr import pipeline_fr
 
 
 
-data_dir = "Datasets/CASS-dataset/Freemium_cass_global_20220417-170000/cass/global/civile"
+# data_dir = "Datasets/CASS-dataset/Freemium_cass_global_20220417-170000/cass/global/civile"
 
 
 # # Run this cell and the next one just one time to generate the 'cases_after_2000.txt' file
@@ -28,7 +28,6 @@ data_dir = "Datasets/CASS-dataset/Freemium_cass_global_20220417-170000/cass/glob
 
 
 import re
-"""
 files_after_2000 = []
 i=0
 for path, _, files in os.walk(data_dir):
@@ -46,15 +45,10 @@ for path, _, files in os.walk(data_dir):
                     if (int(y) >= 2000):
                         files_after_2000.append(name)
                         
-"""
 
 
 # Write all these file names in a .txt file
 
-# In[7]:
-
-
-"""
 text_file = open("cases_after_2000.txt", "wt")
 for case in files_after_2000:
     case = case.replace(".xml", "")
@@ -63,12 +57,9 @@ for case in files_after_2000:
     
 text_file.close()
 
-"""
 
 
 # Dont't forget to change the path if needed:
-
-# In[8]:
 
 
 path_cases_file = open("cases_after_2000.txt", "r")
@@ -76,20 +67,10 @@ cases_file = path_cases_file.read()
 str_files = cases_file.split("\n")
 
 
-# In[9]:
-
-
 print(len(str_files))
 
 
-# In[10]:
-
-
 df = pd.DataFrame(columns = ["id_file", "decision", "resume"])
-df
-
-
-# In[11]:
 
 
 def check_file(file):
@@ -101,8 +82,6 @@ def check_file(file):
 
 
 # Check if a .story file is after year 2000,  read it and save the content in a vector
-
-# In[12]:
 
 
 path = "env/cleaned_files_civile"
