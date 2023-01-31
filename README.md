@@ -15,7 +15,7 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 ## Repository structure
 
-- [dataset/](dataset) : once you run `setup.sh`
+- [dataset/](dataset) : scripts within this folder do were used to preprocess CASS data. The .story files need for the project will be downloaded once you run `setup.sh`
 
 - [presentations/](presentations) : folder containing all the intermediate presentations as PDF. Each file is labled using the template SoftwarePresentation_[month-and-date].pdf
 
