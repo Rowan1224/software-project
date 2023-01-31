@@ -17,11 +17,11 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 - [dataset/](dataset) : scripts within this folder were used to preprocess CASS data. The .story files needed for the project will be downloaded once you run `setup.sh`. All other pre-processed files are present in the directory.
 
-- [scripts/](scripts) : contains the initial baseline.py, question_generation folder, and cross-encode folder.
+- [scripts/](scripts) : contains baseline.py script for the initial baseline model, question_generation folder, and cross-encode folder.
 
-- [scripts/question_generation/](scripts/question_generation): 
+- [scripts/question_generation/](scripts/question_generation): contains the question_generation.py script to generate Synthetic Question dataset.
 
-- [scripts/cross-encode](scripts/cross-encode):
+- [scripts/cross-encode](scripts/cross-encode): contains the training scripts for STSB - `CE_stsb_train.py` and Civile-NLI - `CE_civile-nli_train.py` models.
 
 - [results/](results) : 
 
