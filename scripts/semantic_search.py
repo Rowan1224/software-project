@@ -104,7 +104,7 @@ def evaluate_semantic_model(
 
 if __name__ == "__main__":
     semantic_search_model = load_semantic_search_model("all-mpnet-base-v2")
-    contexts, questions = read_json('../syntheticData_generation/generated-questions.json') # load context
+    contexts, questions = read_json('./syntheticData_generation/generated-questions.json') # load context
     if_faiss = True
 
     if if_faiss:
