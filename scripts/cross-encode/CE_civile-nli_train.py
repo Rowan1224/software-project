@@ -17,7 +17,7 @@ import pandas as pd
 # data.to_csv('./synthetic-dataset.csv', index=False)
 
 # restruture synthetic-dataset as flue to pass in load_dataset
-df_file = {'train': 'synthetic-dataset.csv'}
+df_file = {'train': 'synthetic-nli.csv'}
 train_split = '10000'
 test_split = '1000'
 

@@ -19,9 +19,8 @@ def clean_input(inp):
 #reading and creating the first half of the synthetic-nli dataset
 df = pd.read_csv('questions.csv')
 df['Context'] = df['Context'].apply(lambda x: clean_input(x))
-new_df = df.drop(columns=['ID']).rename(columns={'Context' : 'premise', 'Question' : 'hypo'})
-new_df['label']='1'
-new_df.to_csv('synthetic-nli.csv',index=False)
+df = df.drop(columns=['ID']).rename(columns={'Context' : 'premise', 'Question' : 'hypo'})
+df['label']='1'
 
 def get_embeddings_from_contexts(model, contexts): # for embeddings
     """
@@ -72,7 +71,7 @@ def get_context(query_emb, contexts, contexts_emb, top_k=2):
 
 semantic_search_model = load_semantic_search_model("distiluse-base-multilingual-cased-v1") # or all-mpnet-base-v2
 
-df = pd.read_csv('synthetic-nli.csv')
+
 #encode raw contexts to embedding vectors
 questions_emb = get_embeddings_from_contexts(
     semantic_search_model, df.hypo.values
@@ -116,5 +115,5 @@ df = df.drop_duplicates()
 merged = pd.concat([df,df_irr], axis=0)
 merged = merged.drop_duplicates()
 
-merged.to_csv('synthetic-nli.csv',index=False)
+merged.to_csv('../cross-encode/synthetic-nli.csv',index=False)
 
