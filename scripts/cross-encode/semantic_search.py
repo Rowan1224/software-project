@@ -8,21 +8,6 @@ import faiss
 import json
 from sentence_transformers import util
 
-
-# def create_arg_parser():
-#
-#     """Returns a map with commandline parameters taken from the user"""
-#
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument(
-#         "-f",
-#         "--faiss",
-#         action="store_true",
-#         help="Whether to use faiss or not (default: False)",
-#     )
-#     args = parser.parse_args()
-#     return args
-
 def read_json(filepath):
     with open(filepath, 'r') as f:
         file = json.load(f)
@@ -101,33 +86,6 @@ def get_answer(model, query, context):
     return res[0]["generated_text"]
 
 
-# def evaluate_qa_and_semantic_model(
-#     semantic_model, queries, qa_model, contexts, contexts_emb, model_name, index=None
-# ):
-#     predictions = []
-#     best_contexts = list()
-#     for query in queries:
-#         if index:
-#             context = combine(query, semantic_model, index, contexts, "contexts")
-#         else:
-#             context = get_context(semantic_model, query, contexts, contexts_emb)
-#         formatted_question = {"question": query, "context": context}
-#         generated_answers = qa_model(formatted_question)["answer"]
-#         best_contexts.append(context)
-#         predictions.append(generated_answers)
-
-#     evaluate_predictions(
-#         predictions,
-#         test_answers,
-#         f"Question Answering + Semantic Search + {model_name}",
-#     )
-#     save_answers(
-#         queries,
-#         best_contexts,
-#         test_answers,
-#         predictions,
-#         f"QA_Semantic_Search_{model_name}",
-#     )
 
 
 def evaluate_semantic_model(
@@ -142,18 +100,11 @@ def evaluate_semantic_model(
 
     return predictions
 
-    # evaluate_predictions(predictions, test_answers, "Semantic Search")
-    # save_answers(questions, predictions, test_answers, predictions, "Semantic_Search")
 
 
 if __name__ == "__main__":
-
-    # args = create_arg_parser()
-
-    # best QA Models from fine tuning
-    # qa_models = ['albert-squad-slp','distilbert-squad-slp','electra-squad-slp'] 
     semantic_search_model = load_semantic_search_model("all-mpnet-base-v2")
-    contexts, questions = read_json('sample.json') # load context
+    contexts, questions = read_json('../syntheticData_generation/generated-questions.json') # load context
     if_faiss = True
 
     if if_faiss:
@@ -178,23 +129,3 @@ if __name__ == "__main__":
         contexts_emb,
         index,
     ))
-
-
-
-    # for model_name in qa_models:
-
-    #     #load models from hugginface hub
-    #     qa_model = load_question_answering_model(f"rowan1224/{model_name}")
-    #     if qa_model is not None:
-    #         evaluate_qa_and_semantic_model(
-    #             semantic_search_model,
-    #             test_questions,
-    #             qa_model,
-    #             contexts,
-    #             contexts_emb,
-    #             model_name,
-    #             index,
-    #         )
-
-    # end = time.time()
-    # print(f"Time taken: {end - start}")
