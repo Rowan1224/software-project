@@ -85,7 +85,7 @@ def evaluate_semantic_model(model, question, contexts, contexts_emb, index=None)
 
 semantic_search_model = load_semantic_search_model("distiluse-base-multilingual-cased-v1") # model unseen by the our trained models before
 
-df = pd.read_csv('synthetic-nli.csv')
+df = pd.read_csv('../scripts/cross-encode/synthetic-nli.csv')
 contexts = df.premise.unique()
 contexts = pd.DataFrame(contexts, columns = ['premise'])
 #encode raw contexts to embedding vectors
@@ -137,7 +137,7 @@ def run_inference(model, model_name, query, top_K=15):
     return results
 
 
-df_file = {'train': 'synthetic-nli.csv'}
+df_file = {'train': '../scripts/cross-encode/synthetic-nli.csv'}
 
 data = datasets.load_dataset("./", data_files=df_file, split = [f'train[19000:20000]'] )
 
