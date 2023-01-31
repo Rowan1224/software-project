@@ -9,7 +9,7 @@ from datasets import Dataset
 import torch
 import json
 
-data = pd.read_csv('civil-data.csv')
+data = pd.read_csv('../dataset/civile-data.csv')
 contexts = data['resume'].tolist()
 
 def clean_input(inp):
