@@ -10,20 +10,12 @@ print(os.getcwd())
 os.chdir("../")
 print(os.getcwd())
 
-
-
 from pipeline_fr import pipeline_fr
-
-
-
 # data_dir = "Datasets/CASS-dataset/Freemium_cass_global_20220417-170000/cass/global/civile"
 
 
-# # Run this cell and the next one just one time to generate the 'cases_after_2000.txt' file
-# 
-# I uploaded this file on git so normally you should find it there
-# 
-# Filter and select just the cases after year 2000 
+# Run this cell and the next one just one time to generate the 'cases_after_2000.txt' file
+# Filtering and selecting just the cases after year 2000 
 
 
 
@@ -47,7 +39,7 @@ for path, _, files in os.walk(data_dir):
                         
 
 
-# Write all these file names in a .txt file
+# Writing all these file names in a .txt file
 
 text_file = open("cases_after_2000.txt", "wt")
 for case in files_after_2000:
@@ -60,8 +52,6 @@ text_file.close()
 
 
 # Dont't forget to change the path if needed:
-
-
 path_cases_file = open("cases_after_2000.txt", "r")
 cases_file = path_cases_file.read()
 str_files = cases_file.split("\n")
@@ -83,8 +73,7 @@ def check_file(file):
 
 # Check if a .story file is after year 2000,  read it and save the content in a vector
 
-
-path = "env/cleaned_files_civile"
+path = "cleaned_files_civile"
 content_file = []
 file_content_assoc={}
 for file in os.listdir(path):
@@ -100,17 +89,13 @@ for file in os.listdir(path):
 # - in the original dataset: 17314
 # - from the generate .story files: 16256
 # 
-# Maybe there was a bug during their generation and some of them were lost. It is not such a problem, it is just informative
-
-# In[13]:
+# Maybe there was a bug during their generation and some of them were lost. It is not such a problem, it is just information
 
 
 len(file_content_assoc)
 
 
 # Split each file by "@highlight" and save the decision and resume in differet variables
-
-# In[15]:
 
 
 decision, resume = [], []
@@ -121,9 +106,6 @@ for f in content_file:
 
 
 # Delete special characters from decision and resume (for example "\n")
-
-# In[36]:
-
 
 def delete_special_characters(d):
     new_d = []
@@ -144,4 +126,4 @@ print(len(decision), len(resume))
 
 
 df_files = pd.DataFrame(list(zip( list(file_content_assoc.keys()), decision, resume)), columns = ["id_file", "decision", "resume"])
-df_files.to_csv('./question_generation/civil-data.csv', index=False)
+df_files.to_csv('civile-data.csv', index=False)
