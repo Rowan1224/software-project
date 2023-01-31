@@ -30,3 +30,8 @@ To download and setup the necessary data and libraries: `./setup.sh`
 - [presentations/](presentations) : folder containing all the intermediate presentations as PDF. Each file is labled using the template SoftwarePresentation_[month-and-date].pdf
 
 - [Report/](Report): contains the final project pdf report.
+
+## Usage Guide
+
+- Make sure that you're running the code from the directory where the script is located.
+- To run any file within (scripts) just use `python [Script_name].py`.
