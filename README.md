@@ -19,7 +19,7 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 - [scripts/](scripts) : contains baseline.py script for the initial baseline model, question_generation folder, and cross-encode folder.
 
-- [scripts/question_generation/](scripts/question_generation): contains the question_generation.py script to generate Synthetic Question dataset.
+- [scripts/syntheticData_generation](scripts/syntheticData_generation): contains the `question_generation.py` and `synthetic-nli.py` scripts to generate synthetic question dataset and the synthetic-nli dataset.
 
 - [scripts/cross-encode](scripts/cross-encode): contains the training scripts for STSB - `CE_stsb_train.py` and Civile-NLI - `CE_civile-nli_train.py` models.
 
