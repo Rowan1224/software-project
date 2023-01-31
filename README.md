@@ -15,10 +15,16 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 ## Repository structure
 
-- [dataset/](dataset) : scripts within this folder do were used to preprocess CASS data. The .story files need for the project will be downloaded once you run `setup.sh`
+- [dataset/](dataset) : scripts within this folder were used to preprocess CASS data. The .story files needed for the project will be downloaded once you run `setup.sh`. All other pre-processed files are present in the directory.
 
-- [presentations/](presentations) : folder containing all the intermediate presentations as PDF. Each file is labled using the template SoftwarePresentation_[month-and-date].pdf
+- [scripts/](scripts) : contains the initial baseline.py, question_generation folder, and cross-encode folder.
+
+- [scripts/question_generation/](scripts/question_generation): 
+
+- [scripts/cross-encode](scripts/cross-encode):
 
 - [results/](results) : 
 
-- [scripts/](scripst) : all the scripts for preprocessing, training models and evaluating
+- [presentations/](presentations) : folder containing all the intermediate presentations as PDF. Each file is labled using the template SoftwarePresentation_[month-and-date].pdf
+
+- [Report/](Report): contains the final project pdf report.
