@@ -144,4 +144,4 @@ print(len(decision), len(resume))
 
 
 df_files = pd.DataFrame(list(zip( list(file_content_assoc.keys()), decision, resume)), columns = ["id_file", "decision", "resume"])
-df_files.to_csv('./question_generation/civil-data.csv', index=False)
+df_files.to_csv('civile-data.csv', index=False)
