@@ -15,15 +15,17 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 ## Repository structure
 
+- The fron-end for this project can be found (here)[https://huggingface.co/spaces/ssilwal/CivileLaw-IR]
+
 - [dataset/](dataset) : scripts within this folder were used to preprocess CASS data. The .story files needed for the project will be downloaded once you run `setup.sh`. All other pre-processed files are present in the directory.
 
-- [scripts/](scripts) : contains baseline.py script for the initial baseline model, question_generation folder, and cross-encode folder.
+- [scripts/](scripts) : contains `semantic_search.py` script for the initial semantic search model, syntheticData_generation folder, and cross-encode folder.
 
 - [scripts/syntheticData_generation](scripts/syntheticData_generation): contains the `question_generation.py` and `synthetic-nli.py` scripts to generate synthetic question dataset and the synthetic-nli dataset.
 
-- [scripts/cross-encode](scripts/cross-encode): contains the training scripts for STSB - `CE_stsb_train.py` and Civile-NLI - `CE_civile-nli_train.py` models.
+- [scripts/cross-encode](scripts/cross-encode): contains the training scripts for STSB - `CE_stsb_train.py` and Civile-NLI - `CE_civile-nli_train.py` models. Also, has the final `dense_retrieval_pipeline.py` script that contains front-end for human evaluation.
 
-- [results/](results) : 
+- [results/](results) : contains the `automatic_evaluation.py` script.
 
 - [presentations/](presentations) : folder containing all the intermediate presentations as PDF. Each file is labled using the template SoftwarePresentation_[month-and-date].pdf
 
