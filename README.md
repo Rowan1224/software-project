@@ -15,7 +15,7 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 ## Repository structure
 
-- The fron-end for this project can be found (here)[https://huggingface.co/spaces/ssilwal/CivileLaw-IR]
+- The fron-end for this project can be found [here](https://huggingface.co/spaces/ssilwal/CivileLaw-IR)
 
 - [dataset/](dataset) : scripts within this folder were used to preprocess CASS data. The .story files needed for the project will be downloaded once you run `setup.sh`. All other pre-processed files are present in the directory.
 
