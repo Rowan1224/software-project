@@ -153,6 +153,7 @@ def evaluate_semantic_model(model, question, contexts, contexts_emb, index=None)
 
     return predictions
 
+#front end for human evaluation
 @st.experimental_singleton
 def load_models():
 
