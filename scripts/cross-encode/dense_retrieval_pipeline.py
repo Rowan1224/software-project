@@ -164,7 +164,7 @@ def load_models():
 
     model_baseline = CrossEncoder('amberoad/bert-multilingual-passage-reranking-msmarco', max_length=512, device='cuda')
 
-    df = pd.read_csv('synthetic-dataset.csv')
+    df = pd.read_csv('synthetic-nli.csv')
     contexts = df.premise.unique()
     contexts = pd.DataFrame(contexts, columns = ['premise'])
     context_emb = np.loadtxt('contexts-emb.txt', dtype=np.float32)
