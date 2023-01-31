@@ -10,25 +10,25 @@ from sentence_transformers import util
 
 
 
-def read_json(filepath):
-    """
-    It opens the file, reads the file, and then extracts the context and questions from the file
+# def read_json(filepath):
+#     """
+#     It opens the file, reads the file, and then extracts the context and questions from the file
     
-    :param filepath: the path to the file you want to read
-    :return: A tuple of two lists, one for the contexts and one for the questions.
-    """
-    with open(filepath, 'r') as f:
-        file = json.load(f)
-        contexts = []
-        for data in file:
-            texts = []
-            for context in data['items']:
-                text = context['context']
-                texts.append(text)
-                # contexts.append(text)
-            contexts.append(" ".join(texts))
+#     :param filepath: the path to the file you want to read
+#     :return: A tuple of two lists, one for the contexts and one for the questions.
+#     """
+#     with open(filepath, 'r') as f:
+#         file = json.load(f)
+#         contexts = []
+#         for data in file:
+#             texts = []
+#             for context in data['items']:
+#                 text = context['context']
+#                 texts.append(text)
+#                 # contexts.append(text)
+#             contexts.append(" ".join(texts))
 
-    return contexts
+#     return contexts
         
 
 def get_embeddings_from_contexts(model, contexts): # for embeddings
@@ -182,7 +182,7 @@ if __name__ == "__main__":
 
     semantic_search_model = load_semantic_search_model("all-distilroberta-v1") # or all-mpnet-base-v2
     # contexts = read_json('sample.json') # load context
-    contexts = pd.read_csv('contexts.csv').resume.values.tolist() #contexts.csv is all the contextx put in a df
+    contexts = pd.read_csv('../dataset/civile-data.csv').resume.values.tolist() #civile-data.csv is all the contexts put in a df
     if_faiss = True
 
     start = time.time()
