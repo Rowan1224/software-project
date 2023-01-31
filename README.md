@@ -34,4 +34,6 @@ To download and setup the necessary data and libraries: `./setup.sh`
 ## Usage Guide
 
 - Make sure that you're running the code from the directory where the script is located.
-- To run any file within (scripts) just use `python [Script_name].py`.
+
+- To run any file within the directory just use **python [Script_name].py**. For example: `python automatic_evaluation.py` will run the automatic evaluation script.
+
