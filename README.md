@@ -23,7 +23,7 @@ To download and setup the necessary data and libraries: `./setup.sh`
 
 - [scripts/cross-encode](scripts/cross-encode): contains the training scripts for STSB - `CE_stsb_train.py` and Civile-NLI - `CE_civile-nli_train.py` models. Also, has the final `dense_retrieval_pipeline.py` script that contains front-end for human evaluation.
 
-- [scripts/front-end](scripts/front-end): contains the `app.py` script to load the fron-end system for the project. Use `streamlit run app.py` to run the script. The online version can be found [here](https://huggingface.co/spaces/ssilwal/CivileLaw-IR) in Huggingface Spaces.
+- [scripts/front-end](scripts/front-end): contains the `app.py` script to load the front-end system for the project. Use `streamlit run app.py` to run the script. The online version can be found [here](https://huggingface.co/spaces/ssilwal/CivileLaw-IR) in Huggingface Spaces.
 
 - [results/](results) : contains the `automatic_evaluation.py` script.
 
